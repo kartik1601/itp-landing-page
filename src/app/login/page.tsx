@@ -16,12 +16,14 @@ export default function LoginPage() {
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const [loading, setLoading] = useState(false)
+  const [login, loginFailed] = useState(false)
 
   const onLogin = async () => {
     try {
       
       setLoading(true)
-      
+      loginFailed(false)
+
       const response = await axios.post("/api/users/login", user)
 
       console.log("Login Success", response.data)
@@ -30,7 +32,9 @@ export default function LoginPage() {
 
 
     } catch (error:any) {
-      console.log("Signup Failed")
+      setLoading(false)
+      loginFailed(true)
+      console.log("Login Failed")
       toast.error(error.message)
     }
   }
@@ -45,7 +49,11 @@ export default function LoginPage() {
 
   return (
     <div className='flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100 text-gray-800'>
-      <h1 className='font-bold py-10 text-3xl'>{loading ? "Loading..." : "LOGIN"}</h1>
+      <h1 className='font-bold py-10 text-3xl'>
+        {loading ? "Loading... " : "LOGIN "} 
+        <span className='text-3xl text-red-500'>{login ? " Failed! " : ""}</span>
+      </h1>
+
       <hr className='w-1/2 border-gray-300 mb-8' />
       <label htmlFor="email" className='block text-lg mb-2'>EMAIL</label>
       <input 

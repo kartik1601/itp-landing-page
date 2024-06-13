@@ -24,6 +24,13 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({error: "Check credentials!"},{status:400})
         }
 
+        if (!user.isAdmin) {
+            return NextResponse.json({ error: "Access denied! User is not an admin." }, { status: 403 });
+        }
+        if (!user.isVerified) {
+            return NextResponse.json({ error: "User not verified!" }, { status: 403 });
+        }
+
         const tokenData = {
             id: user._id,
             username: user.username,
