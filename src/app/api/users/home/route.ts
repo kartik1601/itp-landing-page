@@ -14,8 +14,8 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({error: "User does not exist!"}, {status: 400})
     }
 
-    if (!user.isAdmin) {
-        return NextResponse.json({ error: "Access denied! User is not an admin." }, { status: 403 });
+    if (!user.isAdmin || !user.isVerified) {
+        return NextResponse.json({ error: "Access denied! User is not authenticated!" }, { status: 403 });
     }
 
     return NextResponse.json({
