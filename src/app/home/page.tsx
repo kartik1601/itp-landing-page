@@ -46,7 +46,7 @@ export default function Home() {
           </Link>
           <Link href="/bill-of-materials"
           className="bg-white text-black px-6 py-3 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:bg-blue-300 font-bold">
-              <Image src="/bill-of-materials-logo.png" alt="Bill of Materials" width={240} height={240} className="mb-2"/>
+              <Image src="/bill-of-materials-logo.png" alt="Bill of Materials" width={220} height={220} className="mb-2"/>
               Bill of Materials
           </Link>
         </div>
