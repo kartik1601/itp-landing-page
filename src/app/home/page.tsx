@@ -36,7 +36,7 @@ export default function Home() {
         <div className="text-2xl font-bold text-yellow-500">LIMSTIR-DTU</div>
         <button
           onClick={logout}
-          className="text-white bg-red-700 focus:outline-none focus:ring-4 rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 hover:text-red-500 hover:bg-white font-bold transition duration-300"
+          className="text-white bg-red-700 focus:outline-none focus:ring-4 rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-white dark:focus:ring-red-900 hover:text-red-500 hover:bg-white font-bold transition duration-300"
         >
           LOGOUT
         </button>
