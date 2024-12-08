@@ -21,7 +21,7 @@ export default function Home() {
   }
   const check = async () => {
     try {
-      await axios.get('/api/users/home')
+      await axios.post('/api/users/home')
       toast.success('Welcome!')
     } catch (error: any) {
       console.log(error.message)
@@ -29,6 +29,8 @@ export default function Home() {
       router.push('/')
     }
   }
+
+  check();
 
   return (
     <div className="bg-gradient-to-r from-slate-700 to-gray-800 flex flex-col items-center justify-center min-h-screen py-2 text-white">
