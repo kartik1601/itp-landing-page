@@ -11,7 +11,9 @@ export default function Home() {
 
   const logout = async () => {
     try {
-      await axios.get('/api/users/logout');
+      await axios.get('/api/users/logout?' + new Date().getTime(), { withCredentials: true });
+
+      console.log('Logout successful!');
       toast.success('Logout Successful');
       router.push('/');
     } catch (error: any) {
