@@ -21,7 +21,7 @@ export default function Home() {
   }
   const check = async () => {
     try {
-      await axios.post('/api/users/home')
+      await axios.get('/api/users/home')
       toast.success('Welcome!')
     } catch (error: any) {
       console.log(error.message)
