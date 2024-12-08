@@ -30,8 +30,6 @@ export default function Home() {
     }
   }
 
-  check();
-
   return (
     <div className="bg-gradient-to-r from-slate-700 to-gray-800 flex flex-col items-center justify-center min-h-screen py-2 text-white">
       <nav className="w-full flex justify-between items-center p-5">
