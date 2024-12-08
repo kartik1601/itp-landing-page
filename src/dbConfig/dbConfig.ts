@@ -1,4 +1,7 @@
+import dotenv from 'dotenv';
 import mongoose from "mongoose";
+
+dotenv.config();
 
 export async function connect() {
     try {
@@ -13,6 +16,10 @@ export async function connect() {
             console.log('MongoDB connection error!: ' + err);
             process.exit();
         });
+
+        if (!process.env.MONGO_URI) {
+            console.log('MONGO_URI environment variable is not defined!');
+        }
     } catch (error:any) {
         console.log('Connection Error!')
         console.log(error);
